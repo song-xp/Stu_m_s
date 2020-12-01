@@ -1,0 +1,15 @@
+#changeLogin{
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    display: block;
+    background-color: #11f7ff;
+    text-decoration: none;
+    color: #ff3614;
+    font-size: 1.2em;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    top: 2%;
+}

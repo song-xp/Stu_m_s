@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxp.dao.StudentDao">
+    <select id="selectAll" resultType="Student">
+        select * from t_student
+    </select>
+
+    <insert id="stuadd" parameterType="Student">
+        insert into t_student (sno,stuname,stusex,stusub,stuclass,stuphone,stuaddress,regtime)
+		values(#{sno},#{stuname},#{stusex},#{stusub},#{stuclass},#{stuphone},#{stuaddress},#{regtime})
+    </insert>
+
+    <update id="update" parameterType="Student">
+        update t_student
+        set sno=#{sno},stuname=#{stuname},stusex=#{stusex},stusub=#{stusub},stuclass=#{stuclass},
+            stuphone=#{stuphone},stuaddress=#{stuaddress}
+        where sid=#{sid}
+    </update>
+
+    <delete id="studel" parameterType="int">
+        delete from t_student where sid=#{sid}
+    </delete>
+
+    <select id="stuLogin" resultType="Student">
+        select * from t_student where sid=#{sid} and sno=#{sno}
+    </select>
+</mapper>
